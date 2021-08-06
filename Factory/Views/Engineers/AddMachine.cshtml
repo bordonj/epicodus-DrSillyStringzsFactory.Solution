@@ -26,12 +26,25 @@ else
     <input type="submit" value="Save" />
   }
 }
-
-<a
+<p>
+  <a
   asp-controller="Engineers"
   asp-action="Details"
   asp-route-id="@Model.EngineerId"
   class="btn btn-primary"
->Back to [@(Model.Name)] Details</a>
-@* <p> @Html.ActionLink($"Back to Details on {Model.Name}", "Details", "Engineers", new { id = Model.EngineerId}) </p> *@
+  >
+    Back to [@(Model.Name)] Details
+  </a>
+</p>
+
+<p>
+  <a
+  asp-controller="Engineers"
+  asp-action="Index"
+  class="btn btn-primary"
+  >
+    Back to Engineers
+  </a>
+</p>
+
 <p>@Html.ActionLink("Back to Engineers", "Index")</p> 
