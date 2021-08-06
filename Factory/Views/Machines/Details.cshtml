@@ -23,7 +23,7 @@ else
       @using (Html.BeginForm("DeleteEngineer", "Machines"))
       {
         @Html.Hidden("joinId", @join.EngineerMachineId)
-        <input type="submit" value="Delete"/>
+        <input type="submit" class="btn-btn primary" value="Delete"/>
       }
     </li>
   }

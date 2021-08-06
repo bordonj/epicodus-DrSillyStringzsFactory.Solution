@@ -12,9 +12,17 @@
 
   @Html.LabelFor(model => model.Description)
   @Html.TextBoxFor(model => model.Description)
-  <input type="submit" value="Add new Engineer" />
+  <input class="btn btn-primary" type="submit" value="Add new Engineer" />
 }
 <p>
   <a href='javascript:history.go(-1)' class="btn btn-primary">Go Back to Previous Page</a>
 </p>
-<p>@Html.ActionLink("Show all Engineers", "Index")</p> 
+<p>
+  <a
+  asp-controller="Engineers"
+  asp-action="Index"
+  class="btn btn-primary"s
+  >
+    <i class="bi bi-house-fill"></i> Engineers
+  </a>
+</p>
