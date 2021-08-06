@@ -14,9 +14,9 @@
   @Html.LabelFor(model => model.Description)
   @Html.TextBoxFor(model => model.Description)
 
-  @Html.Label("Select engineer")
-  @Html.DropDownList("EngineerId")
-
   <input type="submit" value="Add new Machine" class="btn btn-default" />
 }
+<p>
+  <a href='javascript:history.go(-1)' class="btn btn-primary">Go Back to Previous Page</a>
+</p>
 <p>@Html.ActionLink("Show all Machines", "Index")</p> 

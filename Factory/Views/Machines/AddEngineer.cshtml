@@ -4,9 +4,9 @@
 
 @model Factory.Models.Machine
 
-<h2>Add a Engineer</h2>
+<h2>Add an Engineer</h2>
 
-<h4>Add a Engineer to this task: @Html.DisplayFor(model => model.Name)</h4>
+<h4>Add an Engineer to this task: @Html.DisplayFor(model => model.Name)</h4>
 
 @using (Html.BeginForm())
 {
@@ -18,4 +18,32 @@
   <input type="submit" value="Save" />
 }
 
-<p>@Html.ActionLink("Back to Machines", "Index")</p> 
+
+<p>
+  <a
+  asp-controller="Engineers"
+  asp-action="Create"
+  class="btn btn-primary"
+  >
+    Create new Engineer
+  </a>
+</p>
+<p>
+  <a
+  asp-controller="Machines"
+  asp-action="Details"
+  asp-route-id="@Model.MachineId"
+  class="btn btn-primary"
+  >
+    Back to [@(Model.Name)] Details
+  </a>
+</p>
+<p>
+  <a
+  asp-controller="Machines"
+  asp-action="Index"
+  class="btn btn-primary"
+  >
+    Back to Machines
+  </a>
+</p>

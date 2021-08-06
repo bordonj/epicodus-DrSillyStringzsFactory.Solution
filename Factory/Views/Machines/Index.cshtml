@@ -19,11 +19,20 @@
 
 <p>
   <a
+    asp-action="Create"
+    asp-controller="Machines"
+    class="btn btn-primary"
+  >
+    <i class="bi bi-plus-square-fill"></i> Machine
+</a>
+</p> 
+<p>
+  <a
     asp-action="Index"
     asp-controller="Home"
     class="btn btn-primary"
-  >Home<i class="bi bi-moon-fill"></i>
-</a>
+  > 
+    <i class="bi bi-house"></i> Home
+  </a>
 </p> 
 
-<p>@Html.ActionLink("Add new Machine", "Create")</p> 
