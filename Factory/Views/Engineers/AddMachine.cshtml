@@ -26,6 +26,16 @@ else
     <input type="submit" value="Save" />
   }
 }
+
+<p>
+  <a
+  asp-controller="Machines"
+  asp-action="Create"
+  class="btn btn-primary"
+  >
+    Create new Machine
+  </a>
+</p>
 <p>
   <a
   asp-controller="Engineers"
@@ -36,7 +46,6 @@ else
     Back to [@(Model.Name)] Details
   </a>
 </p>
-
 <p>
   <a
   asp-controller="Engineers"
@@ -46,5 +55,3 @@ else
     Back to Engineers
   </a>
 </p>
-
-<p>@Html.ActionLink("Back to Engineers", "Index")</p> 
