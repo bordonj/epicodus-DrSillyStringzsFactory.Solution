@@ -37,9 +37,10 @@ There is a many-to-many relationship between `Engineer`s and `Machine`s.
 3. Run "dotnet restore" in the the `Factory` directory to install dependencies
 `$ dotnet restore`
 
-4. Create your own version of the database by importing the `jennifer_bordon.sql` file from the repo with MySQL Workbench.
-
-5. Create an appsettings.json file in the `Factory` directory add the following code to the file:
+4. Create your own version of the database in the cloned repo called`jennifer_bordon.sql`
+  - this can be done by using Migrations
+  - first, you'll need to create an appsettings.json file in the `Factory` directory
+    - add the following code to the file:
 ```
 {
   "ConnectionStrings":
@@ -55,9 +56,16 @@ Be sure to replace `{first_last}` `{YOUR_USERNAME_NAME}` and `{YOUR_PASSWORD}` w
 
 - NOTE: _Do not include the curly brackets in your code snippet of appsettings.json_
 
-6. In order to see the website in the browser, make sure you've navigated to the `Factory` diretory
+  - in order to use a migration, first make sure you download "dotnet ef" tool by running `dotnet tool install --global dotnet-ef --version 3.0.0`
+  - next make sure you are in the `Factory` directory, and run `dotnet ef migrations add Initial`
+    - this will create a new `Migrations` folder in the root of that directory
+  - finally, to apply the migration, run `dotnet ef database update`
+    - this will actually create the database in MySQL so you don't have to manually create it yourself!
+
+
+5. In order to see the website in the browser, make sure you've navigated to the `Factory` diretory
   - run the code `$ dotnet run`
-7. View the website by entering `localhost:5000/` in the url of your browser/client 
+6. View the website by entering `localhost:5000/` in the url of your browser/client 
 
 ## Bugs
 
