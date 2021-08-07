@@ -24,4 +24,14 @@
   <input type="submit" value="Save" />
 }
 
+<p>
+  <a
+  asp-controller="Machines"
+  asp-action="Details"
+  asp-route-id="@Model.MachineId"
+  class="btn btn-primary"
+  >
+    Back to [@(Model.Name)] Details
+  </a>
+</p>
 <p>@Html.ActionLink("Back to list of Machines", "Index")</p> 

@@ -18,12 +18,12 @@ else
   <ul>
   @foreach(var join in Model.JoinEntities)
   {
-    <li
-      >@Html.ActionLink(join.Engineer.Name , "Details", "Engineers", new { id = join.Engineer.EngineerId})
+    <li>
+      @Html.ActionLink(join.Engineer.Name , "Details", "Engineers", new { id = join.Engineer.EngineerId})
       @using (Html.BeginForm("DeleteEngineer", "Machines"))
       {
         @Html.Hidden("joinId", @join.EngineerMachineId)
-        <input type="submit" class="btn-btn primary" value="Delete"/>
+        <input type="submit" class="btn btn-dark" value="Delete"/>
       }
     </li>
   }
@@ -35,3 +35,43 @@ else
 <p>@Html.ActionLink("Back to Machines", "Index")</p>
 <p>@Html.ActionLink("Edit Machine", "Edit", new { id = Model.MachineId })</p>
 <p>@Html.ActionLink("Delete Machine", "Delete", new { id = Model.MachineId })</p> 
+
+<p>
+  <a
+    asp-controller="Machines"
+    asp-action="AddEngineer"
+    asp-route-id="@Model.MachineId"
+    class="btn btn-primary"
+  >
+    <i class="bi bi-plus-square-fill"></i> Engineer
+  </a>
+</p>
+<p>
+  <a
+    asp-controller="Machines"
+    asp-action="Edit"
+    asp-route-id="@Model.MachineId"
+    class="btn btn-primary"
+  >
+    <i class="bi bi-pencil-square"></i> Machine
+  </a>
+</p>
+<p>
+  <a
+    asp-controller="Machines"
+    asp-action="Delete"
+    asp-route-id="@Model.MachineId"
+    class="btn btn-primary"
+  >
+    <i class="bi bi-trash-fill"></i> Machine
+  </a>
+</p>
+<p>
+  <a
+    asp-controller="Machines"
+    asp-action="Index"
+    class="btn btn-primary"
+  >
+    <i class="bi bi-house-fill"></i> Machines
+  </a>
+</p>

@@ -18,6 +18,16 @@
   @Html.LabelFor(model => model.Description)
   @Html.EditorFor(model => model.Description)
 
-  <input type="submit" value="Save" />
+  <input class="btn btn-info" type="submit" value="Save" />
 }
+<p>
+  <a
+  asp-controller="Engineers"
+  asp-action="Details"
+  asp-route-id="@Model.EngineerId"
+  class="btn btn-primary"
+  >
+    Back to [@(Model.Name)] Details
+  </a>
+</p>
 <p>@Html.ActionLink("Back to Engineers", "Index")</p> 
