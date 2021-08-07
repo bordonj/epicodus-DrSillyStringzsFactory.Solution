@@ -23,16 +23,16 @@ There is a many-to-many relationship between `Engineer`s and `Machine`s.
 * _.NET 5 SDK_
 * _Git BASH_
 * _ASP .NET CORE MVC_
-* _Entity Framework Core
+* _Entity Framework Core_
 
 ## Schema
 
 ![Screenshot](screenshot.png)
 ## Setup/Installation Requirements
 
-1. Download or clone the https://github.com/bordonj/epicodus-DrSillyStringzsFactory.Solution to your local machine
+1. Download or clone `https://github.com/bordonj/epicodus-DrSillyStringzsFactory.Solution` to your local machine
 
-2. Open terminal and navigate to the epicodus-DrSillyStringzsFactory.Solution of the directory
+2. Open terminal and navigate to the `epicodus-DrSillyStringzsFactory.Solution` of the directory
 
 3. Run "dotnet restore" in the the `Factory` directory to install dependencies
 `$ dotnet restore`
