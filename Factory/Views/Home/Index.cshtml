@@ -4,6 +4,41 @@
 
 <h1><i class="bi bi-suit-spade-fill"></i>Welcome to the Dr. Sillystringz Factory management!<i class="bi bi-suit-club-fill"></i>
 </h1>
+
+<h1>Engineers</h1>
+
+@if (ViewBag.Engineers.Count == 0)
+{
+  <h3>No engineers have been added yet!</h3>
+} 
+
+<ul>
+  @foreach(var engineer in ViewBag.Engineers)
+  {
+    <li>
+      @Html.ActionLink($"{engineer.Name}", "Details", new { id = engineer.EngineerId })
+      | number of machines: @(engineer.JoinEntities.Count)
+    </li>
+  }
+</ul>
+
+<h1>Machines</h1>
+
+@if (ViewBag.Machines.Count == 0)
+{
+  <h3>No machines have been added yet!</h3>
+} 
+<ul>
+@foreach (var machine in ViewBag.Machines)
+{
+  <li>
+    @Html.ActionLink($"{machine.Name}", "Details", new { id = machine.MachineId })
+    | number of engineers: @(machine.JoinEntities.Count)
+  </li>
+}
+</ul>
+
+
 <p>
   <a
     asp-action="Index"
