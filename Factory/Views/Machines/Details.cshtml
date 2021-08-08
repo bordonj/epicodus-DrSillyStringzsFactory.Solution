@@ -14,20 +14,28 @@
 }
 else
 {
-  <h4>Engineers the machine belongs to:</h4>
-  <ul>
-  @foreach(var join in Model.JoinEntities)
-  {
-    <li>
-      @Html.ActionLink(join.Engineer.Name , "Details", "Engineers", new { id = join.Engineer.EngineerId})
-      @using (Html.BeginForm("DeleteEngineer", "Machines"))
+  <h4>Engineers the machine belongs to: @(Model.JoinEntities.Count)</h4>
+  <ol>
+    @foreach(var join in Model.JoinEntities)
       {
-        @Html.Hidden("joinId", @join.EngineerMachineId)
-        <input type="submit" class="btn btn-dark" value="Delete"/>
-      }
-    </li>
-  }
-  </ul>
+        <table>
+          <tr>
+          <td> 
+            @Html.ActionLink(join.Engineer.Name , "Details", "Engineers", new { id = join.Engineer.EngineerId})
+          </td>
+          <td>
+            <form 
+              asp-action="DeleteEngineer"
+              asp-controller="Machines"
+              >
+              <input id="joinId" name="joinId" type="hidden" value=@(join.EngineerMachineId)>
+              <input type="submit" class="btn btn-dark" value="Delete"/>
+            </form>
+          </td>
+        </tr>
+      </table>
+    }
+  </ol>
 }
 
 <p>

@@ -17,19 +17,27 @@
 else
 {
   <h4>Machines this Engineer is licensed to fix: @(Model.JoinEntities.Count)</h4>
-  <ul>
-  @foreach(var join in Model.JoinEntities)
-  {
-      <li>
-        @Html.ActionLink(join.Machine.Name, "Details", "Machines", new { id = join.Machine.MachineId})
-        @using (Html.BeginForm("DeleteMachine", "Engineers"))
-        {
-          @Html.Hidden("joinId", @join.EngineerMachineId)
-          <input type="submit" class="btn btn-dark" value="Delete"/>
-        }
-      </li>
-  }
-  </ul>
+  <ol>
+    @foreach(var join in Model.JoinEntities)
+    {
+      <table>
+        <tr>
+          <td> 
+            @Html.ActionLink(join.Machine.Name , "Details", "Machines", new { id = join.Machine.MachineId})
+          </td>
+          <td>
+            <form 
+              asp-action="DeleteMachine"
+              asp-controller="Engineers"
+              >
+              <input id="joinId" name="joinId" type="hidden" value=@(join.EngineerMachineId)>
+              <input type="submit" class="btn btn-dark" value="Delete"/>
+            </form>
+          </td>
+        </tr>
+      </table>
+    }
+  </ol>
 }
 
 
