@@ -16,7 +16,7 @@
   @foreach(var engineer in ViewBag.Engineers)
   {
     <li>
-      @Html.ActionLink($"{engineer.Name}", "Details", new { id = engineer.EngineerId })
+      @Html.ActionLink($"{engineer.Name}", "Details", "Engineers", new { id = engineer.EngineerId })
       | number of machines: @(engineer.JoinEntities.Count)
     </li>
   }
@@ -32,7 +32,7 @@
 @foreach (var machine in ViewBag.Machines)
 {
   <li>
-    @Html.ActionLink($"{machine.Name}", "Details", new { id = machine.MachineId })
+    @Html.ActionLink($"{machine.Name}", "Details", "Machines", new { id = machine.MachineId })
     | number of engineers: @(machine.JoinEntities.Count)
   </li>
 }
